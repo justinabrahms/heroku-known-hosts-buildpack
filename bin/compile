@@ -1,0 +1,3 @@
+#!/bin/bash -x
+mkdir -p ~/.ssh/
+cat $1/known_hosts.txt >> ~/.ssh/known_hosts
