@@ -1,4 +1,4 @@
 #!/bin/bash -x
-mkdir -p ~/.ssh/
-cat $1/known_hosts.txt >> ~/.ssh/known_hosts
-cat ~/.ssh/known_hosts
+mkdir -p /app/.ssh/
+cat $1/known_hosts.txt >> /app/.ssh/known_hosts
+cat /app/.ssh/known_hosts
