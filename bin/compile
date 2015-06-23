@@ -1,15 +1,16 @@
 #!/bin/bash -x
+BUILD_DIR=$1
 ENVDIR=$3
-mkdir -p /app/.ssh/
-cat $1/known_hosts.txt >> /app/.ssh/known_hosts
-cat /app/.ssh/known_hosts
+mkdir -p $BUILD_DIR/.ssh/
+cat $1/known_hosts.txt >> $BUILD_DIR/.ssh/known_hosts
+cat $BUILD_DIR/.ssh/known_hosts
 
 # Assume it has \n chars in it, so use -e
-cp $ENVDIR/SSH_RSA_PRIV_KEY /app/.ssh/id_rsa
-chmod 600 /app/.ssh/id_rsa
+cp $ENVDIR/SSH_RSA_PRIV_KEY $BUILD_DIR/.ssh/id_rsa
+chmod 600 $BUILD_DIR/.ssh/id_rsa
 
-cp $ENVDIR/SSH_RSA_PUB_KEY /app/.ssh/id_rsa.pub
-chmod 644 /app/.ssh/id_rsa.pub
+cp $ENVDIR/SSH_RSA_PUB_KEY $BUILD_DIR/.ssh/id_rsa.pub
+chmod 644 $BUILD_DIR/.ssh/id_rsa.pub
 
-ls -alh /app/.ssh/
-cat /app/.ssh/id_rsa.pub
+ls -alh $BUILD_DIR/.ssh/
+cat $BUILD_DIR/.ssh/id_rsa.pub
