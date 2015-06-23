@@ -3,9 +3,12 @@ mkdir -p /app/.ssh/
 cat $1/known_hosts.txt >> /app/.ssh/known_hosts
 cat /app/.ssh/known_hosts
 
-echo $SSH_RSA_PRIV_KEY > /app/.ssh/id_rsa
+# Assume it has \n chars in it, so use -e
+echo -e $SSH_RSA_PRIV_KEY >> /app/.ssh/id_rsa
 chmod 600 /app/.ssh/id_rsa
 
-echo $SSH_RSA_PUB_KEY > /app/.ssh/id_rsa.pub
+echo $SSH_RSA_PUB_KEY >> /app/.ssh/id_rsa.pub
 chmod 644 /app/.ssh/id_rsa.pub
+
+ls -alh /app/.ssh/
 cat /app/.ssh/id_rsa.pub
