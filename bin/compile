@@ -8,3 +8,4 @@ chmod 600 /app/.ssh/id_rsa
 
 echo $SSH_RSA_PUB_KEY > /app/.ssh/id_rsa.pub
 chmod 644 /app/.ssh/id_rsa.pub
+cat /app/.ssh/id_rsa.pub
